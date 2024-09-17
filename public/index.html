@@ -3,39 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar Cita - Consultorio Dentista</title>
+    <title>Consultorio Dentista</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
 </head>
 <body>
-    <div class="appointment-container">
-        <h1>Agendar Cita</h1>
-        <form id="appointmentForm">
-            <div class="form-group">
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre Completo" required>
+    <div class="container">
+        <nav>
+            <a href="#citas">Citas</a>
+            <a href="#pacientes">Pacientes</a>
+            <a href="#pagos">Pagos</a>
+        </nav>
+
+        <!--  Citas -->
+        <section id="citas">
+            <h2>Calendario de Citas</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <!-- Modal para agendar cita -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Agendar Cita</h3>
+                <form id="appointmentForm">
+                    <label for="cliente">Selecciona Cliente</label>
+                    <select id="cliente" name="cliente" required>
+                        <option value="1">Maneuel Anaya</option>
+                        <option value="2">Gerson Alan</option>
+                        <!-- Añadir más clientes  -->
+                    </select>
+                    <input type="hidden" id="fecha" name="fecha">
+                    <label for="hora">Selecciona Hora</label>
+                    <input type="time" id="hora" name="hora" required>
+                    <button type="submit">Agendar Cita</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" placeholder="Tu Email" required>
-            </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Tu Número de Teléfono" required>
-            </div>
-            <div class="form-group">
-                <label for="fecha">Fecha de la Cita</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </div>
-            <div class="form-group">
-                <label for="hora">Hora de la Cita</label>
-                <input type="time" id="hora" name="hora" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Agendar Cita</button>
-            </div>
-        </form>
-        <div id="message"></div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

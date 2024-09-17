@@ -1,55 +1,126 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #eaf6ff;
     margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-.appointment-container {
-    background-color: #fff;
-    width: 100%;
-    max-width: 400px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    background-color: #1c3d5a;
+    padding: 15px;
     text-align: center;
 }
 
-h1 {
-    color: #2C3E50;
-    font-size: 28px;
-    margin-bottom: 10px;
+nav a {
+    color: #ffffff;
+    font-size: 18px;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.form-group {
+nav a:hover {
+    background-color: #29648a;
+}
+
+section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: #1c3d5a;
+    font-size: 24px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
-label {
-    font-size: 14px;
-    color: #34495E;
+#calendar {
+    max-width: 80%;
+    margin: 0 auto;
 }
 
-input {
+/* Estilo de modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    padding: 12px;
-    border: 2px solid #dfe6e9;
-    border-radius: 10px;
-    font-size: 14px;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(28, 61, 90, 0.7);
 }
 
-.submit-btn {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 12px;
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
     border-radius: 10px;
+    width: 40%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #555;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #1c3d5a;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.submit-btn:hover {
-    background-color: #2980b9;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form select {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #b2d3e6;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #1c3d5a;
+}
+
+form input:focus, form select:focus {
+    border-color: #29648a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(28, 61, 90, 0.5);
+}
+
+form button {
+    background-color: #1c6ea4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #29648a;
 }
